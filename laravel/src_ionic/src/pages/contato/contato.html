@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img class="logotopo" src="assets/images/logo.png">
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-right (click)="goToSelectStage()">
+        <img src="assets/estrutura/colher.png" alt="" style="width:20px">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <h2>Contato</h2>
+
+  <form (ngSubmit)="enviar()">
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mensagem</ion-label>
+      <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" style="margin-top:10px" block>Enviar</button>
+  </form>
+
+</ion-content>

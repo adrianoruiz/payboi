@@ -1,0 +1,166 @@
+page-esqueceu-senha {
+.foto {
+  margin: 20px 0;
+  ion-icon {
+    color: #ffffff;
+    font-size: 50px;
+  }
+  .redondo {
+    padding: 15px 0px 0 10px;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+  }
+}
+
+.img-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto 0;
+  border-radius: 50%;
+}
+
+$transparent-white: rgba(255, 255, 255, .6);
+.toolbar-content,
+span {
+  color: white;
+}
+
+.slide-title {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.toolbar-background,
+ion-navbar,
+ion-header {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.header-md::after,
+.toolbar-background-ios {
+  background-image: none;
+  border-bottom: 0;
+}
+
+ion-footer {
+  height: 47px;
+}
+
+.footer {
+  text-align: center;
+  background: rgba(255, 255, 255, .06);
+  min-height: 47px;
+}
+
+.footer-md::before {
+  border-top: 1px solid $transparent-white;
+  background-image: none;
+}
+
+ion-content {
+  background-image: url("../assets/images/estrutura/intro-1.jpg");
+  background-size: cover;
+}
+
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.edit-esq-senha {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.logo {
+  width: 33%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+ion-item {
+  border-radius: 3px !important;
+  padding-left: 10px !important;
+  margin-bottom: 15px !important;
+  margin-bottom: 10px;
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, .2) !important;
+  font-size: 0.9em;
+}
+
+::-webkit-input-placeholder {
+  color: white !important;
+}
+
+.item-inner {
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.login-button {
+  text-transform: none;
+  border: 0;
+}
+
+ion-icon {
+  padding-right: 10px;
+  font-size: 2.2rem;
+}
+
+.strike {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.strike>span {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.strike>span:before,
+.strike>span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 1px;
+  background: $transparent-white;
+}
+
+.strike>span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.strike>span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.btsuccess {
+  background-color: #49c658;
+}
+
+.button.activated {
+  background-color: #fdb812;
+}
+
+.fab.activated {
+  background-color: #fdb812;
+}
+
+
+}

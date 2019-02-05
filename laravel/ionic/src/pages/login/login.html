@@ -1,0 +1,57 @@
+<ion-content padding class="transparent-header">
+
+  <img class="logo" id="logo" src="assets/images/estrutura/logo.png" />
+
+
+  <h2 class="slide-title" id="slide-title" innerHtml="Login"> </h2>
+  <div padding >
+    <form (submit)="login()" style="position: absolute; z-index:999; width: 84%" >
+      <ion-item (click)="rolaTeclado()">
+        <ion-input type="email" placeholder="E-mail" name="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item (click)="rolaTeclado()">
+        <ion-input type="password" name="password" id="password" maxlength=15 [(ngModel)]="password" placeholder="Senha" ></ion-input>
+      </ion-item>
+
+    
+      <!-- <button ion-button block outline type="submit" color="light" class="login-button btsuccess">
+        Continuar
+      </button> -->
+<button ion-button block outline icon-right type="submit" color="light" class="login-button btsuccess">
+
+        CONTINUAR <ion-icon name="md-arrow-forward"></ion-icon>
+      </button>
+      
+
+      <div text-right (click)="esqueciSenha()" style="color:#fff; margin-top: 12px;">
+        Esqueceu Senha?
+      </div>
+
+
+
+    </form>
+  </div>
+
+
+  <div class="strike" style="margin-top:72% ">
+    <span>OU</span>
+
+  </div>
+
+
+  <button type="button" 
+    ion-button icon-left (click)="loginFacebook()" 
+    class="login-button" style="width: 90%;margin:auto;background-color: #3c5a99;">
+      <ion-icon name="logo-facebook"></ion-icon> ENTRAR COM O FACEBOOK  </button> 
+
+
+</ion-content>
+
+<ion-footer (click)="criarConta()">
+  <ion-toolbar class="footer">
+    <div>
+      <div > <span>Não tem uma conta?
+        <b>Criar Agora</b>.</span> </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,13 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+/node_modules
+/public/storage
+/vendor
+/.idea
+/storage
+/nbproject
+Homestead.json
+Homestead.yaml
+/resources/views/.phpintel
+
+composer.lock
+.env

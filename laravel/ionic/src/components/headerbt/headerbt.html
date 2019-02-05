@@ -1,0 +1,20 @@
+<ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  
+  <ion-title >
+    <img class="logotopo" src="assets/images/logo.png">
+  </ion-title>
+
+  <ion-buttons end>
+    <button ion-button icon-right (click)="doPequisa()">
+      <ion-icon name="search" style="margin-right: 5px"></ion-icon>
+    </button>
+
+    <button ion-button icon-right (click)="goToSelectStage()">
+      <ion-icon *ngIf="etapa==1" name="logo-buffer" class="icon_projeto"></ion-icon>
+      <img *ngIf="etapa==2" src="assets/estrutura/colher.png" alt="" style="width:20px">
+    </button>
+  </ion-buttons>
+</ion-navbar>

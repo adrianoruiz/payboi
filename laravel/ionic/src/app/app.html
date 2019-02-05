@@ -1,0 +1,64 @@
+<ion-menu [content]="content" id="menu-material">
+  <!-- <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <ion-content style="background: #222121">
+    <div class="menu-header">
+      <div class="avatar" menuToggle [style.backgroundImage]="'url('+ pic +')'" 
+        (click)="goToEditarPerfil()"></div>
+
+      <!-- <img class="user-avatar round" [src]="pic" menuToggle (click)="goToEditarPerfil()" /> -->
+      
+      <p class="name">{{user?.name}}</p>
+      <p class="cidade">
+        <ion-icon name="pin" class="corpin"></ion-icon> Cidade / PR </p>
+    </div>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+
+
+      <button menuClose ion-item (click)="goToContato()">
+        ENVIE SUGESTÕES
+        <br> RECLAMAÇÕES OU DÚVIDAS </button>
+
+      <button menuClose ion-item (click)="share()">
+        <ion-icon ios="ios-contacts" md="md-contacts" class="icon_menu_home"></ion-icon>
+        INDIQUE O APLICATIVO
+      </button>
+
+      <button menuClose ion-item (click)="openWebPage('https://www.facebook.com/ConstruaContatos')">
+        <ion-icon name="logo-facebook" class="icon_menu_home"></ion-icon>PÁGINA NO FACEBOOK </button>
+
+      <button menuClose ion-item (click)="openWebPage('https://www.facebook.com/ConstruaContatos')">
+        <ion-icon name="logo-instagram" class="icon_menu_home"></ion-icon>PÁGINA NO INSTAGRAM </button>
+
+      <button menuClose ion-item (click)="openWebPage('https://www.youtube.com/watch?v=z5keNjAoB-Y')">
+        <ion-icon name="play" class="icon_menu_home"></ion-icon>CANAL NO YOUTUBE </button>
+
+      <button menuClose ion-item (click)="openWebPage('https://play.google.com/store/apps/details?id=br.contrua.contato.cliques')">
+        AVALIE NO GOOGLE PLAY </button>
+
+
+
+      <button menuClose ion-item (click)="logout()">
+        SAIR
+      </button>
+
+<div class="versaoApp">
+ Versão: 0.2.0
+</div>
+
+    </ion-list>
+
+   
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

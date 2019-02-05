@@ -1,0 +1,157 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <img class="logotopo" src="assets/images/logo.png">
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+<div style="padding: 0 17px;" text-center>
+  <ion-list>
+    <ion-item style="border-bottom: 2px solid #f53d3d;">
+      <ion-label>Sou empresa</ion-label>
+      <ion-toggle color="danger" [(ngModel)]="i_company"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+
+
+    <p>
+      Clique a baixo para fazer o upload da logotipo de sua empresa ou uma foto sua: (opcional)
+    </p>
+    <button ion-button color="danger" (click)="showActionSheet()" icon-start>
+      <ion-icon name="camera"></ion-icon> SELECIONAR IMAGEM</button>
+
+    <ion-row no-padding class="user-image-row">
+      <ion-col no-padding width-40>
+        <!--  -->
+        <img class="logomarca" *ngIf="image" [src]="image" />
+
+        <div class="foto" [hidden]="image" text-center>
+          <img class="logomarca" [src]="data?.avatar" />
+        </div>
+        <!--  -->
+
+      </ion-col>
+    </ion-row>
+
+<ion-item-group style="padding-right: 15px">
+    <ion-list>
+      <ion-item *ngIf="i_company">
+        <ion-label floating>Nome Fantasia </ion-label>
+        <ion-input type="text" name="nome_fantasia" [(ngModel)]="data.nome_fantasia"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="i_company == false">
+        <ion-label floating>Nome </ion-label>
+        <ion-input type="text" name="name" [(ngModel)]="data.name"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="i_company">
+        <ion-label floating>Razão Social </ion-label>
+        <ion-input type="text" name="rz_social" [(ngModel)]="data.rz_social"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item *ngIf="i_company">
+        <ion-label floating>CNPJ/CPF</ion-label>
+        <ion-input type="text" name="cnpj_cpf" [(ngModel)]="data.cnpj_cpf"></ion-input>
+      </ion-item>
+      <ion-item>
+        <select-searchable [(ngModel)]="data.id_activity" [items]="activitys" itemValueField="id" itemTextField="description" [canSearch]="true"
+          searchPlaceholder="Pesquisar...">
+          <ng-template selectSearchableLabelTemplate>Atividades</ng-template>
+        </select-searchable>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Breve descrição</ion-label>
+        <ion-textarea [(ngModel)]="data.history" name="text"></ion-textarea>
+      </ion-item>
+      <!-- <ion-item>
+      <select-searchable [(ngModel)]="data.type_person" [items]="type_person" itemValueField="id" itemTextField="name" [canSearch]="true"
+        searchPlaceholder="Pesquisar..." >
+        <ng-template selectSearchableLabelTemplate>Tipo pessoa</ng-template>
+      </select-searchable>
+    </ion-item> -->
+
+
+      <ion-item>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="text" name="cell_phone" [(ngModel)]="data.cell_phone"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="i_company">
+        <ion-label floating>Telefone</ion-label>
+        <ion-input type="text" name="telephone" [(ngModel)]="data.telephone"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="i_company == false">
+        <ion-label floating>E-mail</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="data.email"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col col-8>
+          <ion-item>
+            <ion-label floating>Endereço</ion-label>
+            <ion-input type="text" name="street" [(ngModel)]="data.street"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-label floating>Número</ion-label>
+            <ion-input type="text" name="number" [(ngModel)]="data.number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-label floating>Bairro</ion-label>
+        <ion-input type="text" name="neighborhood" [(ngModel)]="data.neighborhood"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>CEP</ion-label>
+        <ion-input type="text" name="cep" [(ngModel)]="data.cep"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <select-searchable [(ngModel)]="stateSelected" [items]="states" itemValueField="id" itemTextField="name" [canSearch]="true"
+          searchPlaceholder="Pesquisar..." (onChange)="listCityByState($event)">
+          <ng-template selectSearchableLabelTemplate>Estados</ng-template>
+        </select-searchable>
+      </ion-item>
+
+      <ion-item>
+        <select-searchable [(ngModel)]="citySelected" [items]="cities" itemValueField="id" itemTextField="name" [canSearch]="true"
+          searchPlaceholder="Pesquisar...">
+          <ng-template selectSearchableLabelTemplate>Cidades</ng-template>
+        </select-searchable>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>WEBSITE</ion-label>
+        <ion-input type="text" name="site" [(ngModel)]="data.site"></ion-input>
+      </ion-item>
+
+
+
+    </ion-list>
+</ion-item-group>
+
+    <div padding>
+      <button color="danger" ion-button block (click)="updateProfile()" style="padding: 24px 10px">
+        <ion-icon name="checkmark" style="margin-right: 5px"></ion-icon> SALVAR
+
+      </button>
+    </div>
+
+  </div>
+</ion-content>

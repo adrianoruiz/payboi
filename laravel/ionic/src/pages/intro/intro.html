@@ -1,0 +1,33 @@
+<ion-slides pager>
+
+  <ion-slide *ngFor="let slide of slides" 
+  [ngStyle]="{'background-image': 'url(' + slide?.image + ')'}" style="width: 360px;
+    background-size: cover;
+    background-position: center top;">
+
+
+    <!-- <img [src]="slide?.image" class="slide-image" /> -->
+    <div class="bt-pular">
+      <button ion-button small outline (click)="comecar()" color="light" class="login-button">
+        Pular
+      </button>
+    </div>
+
+    <div class="textos">
+   
+      <img style="width:50%; margin-bottom: 10%;" src="assets/images/estrutura/logo.png" />
+
+
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide?.description"></p>
+
+      <button *ngIf="slide?.aproveite" color="secondary" style="text-transform: capitalize;" ion-button round icon-end (click)="comecar()" >
+         Aproveite
+        <ion-icon name="md-arrow-forward"></ion-icon>
+      </button>
+
+    </div>
+
+  </ion-slide>
+
+</ion-slides>

@@ -1,0 +1,35 @@
+<ion-header>
+  <headerbt></headerbt>
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1>{{ data?.title}}</h1>
+
+  <iframe width="100%" *ngIf="data?.youtube_link" height="215" [src]="data.youtube_link | youtube" frameborder="0" allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
+
+
+  <img *ngIf="!data?.youtube_link && data?.image" src="{{url_img}}conteudos/{{data?.image}}" />
+  <div innerHtml="{{ data?.content }}"></div>
+
+  <div style="margin-top:10px"></div>
+
+  <button ion-button round block (click)="avaliar(data.id)" style="padding: 24px 10px">
+    <ion-icon name="star" style="margin-right: 5px"></ion-icon> Avaliar
+  </button>
+
+  <button ion-button round block (click)="goToProfissionais(data.category_id)" style="padding: 24px 10px">
+    <ion-icon name="search" style="margin-right: 5px"></ion-icon> ENCONTRE
+  </button>
+
+  <!-- <button ion-button round block (click)="goToProfissionais(data.category_id)" style="padding: 24px 10px"> 
+    ENCONTRE PROFISSIONAIS E EMPRESAS
+    <br> RELACIONADOS A {{data?.name}}</button> -->
+
+
+
+
+
+</ion-content>

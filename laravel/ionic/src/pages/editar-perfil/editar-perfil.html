@@ -1,0 +1,123 @@
+<ion-header>
+  <headerbt></headerbt>
+</ion-header>
+
+
+<ion-content>
+  <div class="user-image-content">
+    <div id="overlay">
+
+      <ion-row no-padding class="user-image-row">
+        <ion-col no-padding width-40>
+          <!--  -->
+          <div class="avatar" *ngIf="image" [style.backgroundImage]="'url('+image+')'"></div>
+
+          <div class="foto" [hidden]="image" text-center>
+            <div class="redondo" (click)="showActionSheet()">
+              <div class="avatar" [style.backgroundImage]="'url('+ data?.avatar +')'">
+
+              </div>
+
+              <!-- <img class="user-image" [src]="data?.avatar" /> -->
+            </div>
+          </div>
+          <!--  -->
+
+        </ion-col>
+      </ion-row>
+
+      <h3 class="image-title">{{data?.name}}</h3>
+      <h3 class="image-profissao">{{data?.activity}}</h3>
+    </div>
+  </div>
+
+  <div padding class="breve">
+    <h2>Editar Meu Perfil</h2>
+  </div>
+
+
+  <ion-item-group style="padding-right: 15px">
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" name="name" [(ngModel)]="data.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="text" name="celular" [(ngModel)]="data.cell_phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>E-MAIL</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="data.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <select-searchable [(ngModel)]="activeSelected" [items]="activitys" itemValueField="id" itemTextField="description" [canSearch]="true"
+          searchPlaceholder="Pesquisar...">
+          <ng-template selectSearchableLabelTemplate>Atividades</ng-template>
+        </select-searchable>
+      </ion-item>
+
+      <ion-row>
+        <ion-col col-8>
+          <ion-item>
+            <ion-label floating>Endereço</ion-label>
+            <ion-input type="text" name="street" [(ngModel)]="data.street"></ion-input>
+          </ion-item>
+
+        </ion-col>
+
+        <ion-col col-4>
+          <ion-item>
+            <ion-label floating>Número</ion-label>
+            <ion-input type="text" name="number" [(ngModel)]="data.number"></ion-input>
+          </ion-item>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-label floating>Bairro</ion-label>
+        <ion-input type="text" name="neighborhood" [(ngModel)]="data.neighborhood"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-label floating>WEBSITE</ion-label>
+        <ion-input type="text" name="site" [(ngModel)]="data.site"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <select-searchable [(ngModel)]="stateSelected" [items]="states" itemValueField="id" itemTextField="name" [canSearch]="true"
+          searchPlaceholder="Pesquisar..." (onChange)="listCityByState($event)">
+          <ng-template selectSearchableLabelTemplate>Estados</ng-template>
+        </select-searchable>
+      </ion-item>
+
+      <ion-item>
+        <select-searchable [(ngModel)]="citySelected" [items]="cities" itemValueField="id" itemTextField="name" [canSearch]="true"
+          searchPlaceholder="Pesquisar...">
+          <ng-template selectSearchableLabelTemplate>Cidades</ng-template>
+        </select-searchable>
+
+      </ion-item>
+
+
+    </ion-list>
+
+  </ion-item-group>
+
+  <div padding>
+    <button color="dark" ion-button round block (click)="updateProfile()" style="padding: 24px 10px">
+      <ion-icon name="checkmark" style="margin-right: 5px"></ion-icon> SALVAR
+    </button>
+
+  </div>
+
+
+</ion-content>

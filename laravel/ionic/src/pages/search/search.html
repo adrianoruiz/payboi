@@ -1,0 +1,90 @@
+<ion-header>
+  <headerbt></headerbt>
+</ion-header>
+
+<ion-content>
+
+  <div padding>
+    <ion-segment [(ngModel)]="busca">
+<ion-segment-button value="materias" (click)="listContent(myInput)">
+        Matérias
+      </ion-segment-button>
+<ion-segment-button value="fornecedores" (click)="listContent(myInput)">
+        Fornecedores
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div padding style="padding-bottom: 0px">
+
+    <h4>{{myInput}} </h4>
+    <p> {{total_result}} Resultados encotrados</p>
+  </div>
+
+  <!-- inicio cards -->
+  <div padding style="padding-top:0">
+
+
+    <div [ngSwitch]="busca">
+      <div *ngSwitchCase="'materias'">
+        <ion-card *ngFor="let item of noticias">
+          <ion-card-content (click)="goToPost(item.id)">
+            <ion-card-title>
+              <b>{{item.title}}</b>
+            </ion-card-title>
+
+            <iframe width="100%" *ngIf="item?.youtube_link" height="215" [src]="item.youtube_link | youtube" frameborder="0" allow="autoplay; encrypted-media"
+              allowfullscreen></iframe>
+
+            <img *ngIf="!item?.youtube_link && item?.image" src="{{url_img}}conteudos/{{item.image}}" />
+
+            <div innerHtml="{{ item?.content }}" class="alinhaTexto"></div>
+
+          </ion-card-content>
+        </ion-card>
+
+        <div text-center *ngIf="noticias?.length === 0" style="margin-top: 20px;">
+          {{msgZeroRes}}
+        </div>
+      </div>
+
+
+      <div *ngSwitchCase="'fornecedores'">
+        <ion-card *ngFor="let item of fornecedores">
+          <ion-card-content (click)="goToPost(item.id)">
+            <ion-card-title>
+              <b>{{item.name}}</b>
+            </ion-card-title>
+
+            <ion-avatar item-start>
+              <img src="{{item?.avatar}}">
+            </ion-avatar>
+
+            <div innerHtml="{{ item?.description }}" class="alinhaTexto"></div>
+
+            <p>{{ item.street }} {{item.number}}, {{item.neighborhood}} </p>
+            <p>{{ item.city }} - {{item.uf}} </p>
+
+          </ion-card-content>
+        </ion-card>
+
+        <div text-center *ngIf="fornecedores?.length === 0" style="margin-top: 20px;">
+          {{msgZeroRes}}
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+
+
+
+    <button *ngIf="atividades>0" ion-button round block (click)="goToProfissionais(idCategory)" style="padding: 24px 10px">
+      <ion-icon name="search" style="margin-right: 5px"></ion-icon> ENCONTRE </button>
+
+
+
+
+
+  </div>
+</ion-content>

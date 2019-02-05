@@ -1,0 +1,26 @@
+lisatar contenudo onde 2 é sessão e 4 é categoria
+http://127.0.0.1:8000/api/content/listContents/2/4
+
+listar um unico conteudo pelo seu id
+http://127.0.0.1:8000/api/content/listContent/5
+
+listar atividades
+http://127.0.0.1:8000/api/activitys/listActivitys
+
+listar atividades por categoria 
+http://127.0.0.1:8000/api/activitys/listActivitysByCategory/6
+
+lista usuario de acordo com atividade
+http://construacontatos.com.br/api/users/listUsersByActivitys/2
+
+listar estados
+http://127.0.0.1:8000/api/state/listState
+
+listar cidade de acordo com estado
+http://127.0.0.1:8000/api/city/listCityByState/8
+
+listar todas sessões
+http://127.0.0.1:8000/api/section/listSections
+
+listar categoria de acordo com a sessão
+http://127.0.0.1:8000/api/category/listCategoryBySection/1

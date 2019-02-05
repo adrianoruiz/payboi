@@ -1,0 +1,63 @@
+page-home {
+    .card-content {
+        padding: 0px 0px 0px;
+        
+    }
+    .card {
+        padding: 12px;
+        margin: 12px 0 12px 0;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .card-title-ios { 
+        padding: 0 0 8px;
+    }
+   .ativo {
+       background: #767676;
+   }
+
+.imgtamanho{
+    height: 160px;
+   background-size: cover;
+}
+    .barra_preta {
+        background: #000;
+       height: 40px;
+    }
+
+     .btcategory {
+       color: #767676;
+       float: left;        
+       margin-top: -2px;
+       margin-left: 0px;
+     }
+     
+     .btcategory_right {
+        float: right;
+        margin-right: 0px;
+     }
+
+      .alinhaTexto {
+
+        margin: 8px 0 0 0;
+        font-size: 1.4rem;
+        color: #666;
+        text-align: justify;
+       
+      }
+
+      .ajusteTitle {
+          color: #fff;
+          font-size: 18px;
+          padding-top: 11px;
+          font-weight: bold;
+          text-align: center;
+
+      }
+
+    .content-ios {
+        background-color: #e5e5e5;
+    }
+    
+}
