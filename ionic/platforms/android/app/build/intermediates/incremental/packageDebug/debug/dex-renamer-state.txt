@@ -1,0 +1,4 @@
+#Tue Feb 05 11:58:17 BRST 2019
+base.0=/Applications/MAMP/htdocs/bitbucket/geolocation_git_hub/testserver/payboi/ionic/payboi/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/Applications/MAMP/htdocs/bitbucket/geolocation_git_hub/testserver/payboi/ionic/payboi/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

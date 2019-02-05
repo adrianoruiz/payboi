@@ -1,0 +1,52 @@
+<ion-menu [content]="content" id="menu-material">
+
+
+    <ion-content style="background: #282428">
+      <div class="menu-header">
+        <!-- <img [src]="auth.url_site + pic" *ngIf="pic != ''" menuToggle (click)="goToEditarPerfil(user?.id)"  /> -->
+        <img class="user-avatar round" src="../../assets/imgs/fazenda2.jpg" >
+        <p class="name">Fazenda Slaviero</p>
+      </div>
+      <p class="p-side-menu" >
+        encontre
+      </p>
+      <ion-list >
+        <div *ngFor="let p of pages" (click)="openPage(p)">
+          <button menuClose ion-item *ngIf="p.section == '1'">
+            <ion-icon  class="icon-circle alinha_icon" name="md-radio-button-off"></ion-icon>
+            {{p.title}}
+          </button>
+        </div>
+      </ion-list>
+  
+      <p class="p-side-menu" >
+        Fale conosco
+      </p>
+      <ion-list>
+        <div *ngFor="let p of pages" (click)="openPage(p)">
+          <button menuClose ion-item *ngIf="p.section == '2'">
+            <ion-icon class="icon-circle alinha_icon" name="md-radio-button-off"></ion-icon>
+            {{p.title}}
+          </button>
+        </div>
+<!--   
+        <button menuClose ion-item (click)="openWebPage('https://www.instagram.com/neoalibrasil/?hl=pt')">
+            <ion-icon name="logo-instagram" class="alinha_icon" style="font-size: 24px"></ion-icon> 
+            <div style="padding-top: 6px">Instagram </div>
+        </button> -->
+        <button menuClose ion-item (click)="logout()">
+            <ion-icon name="close-circle-outline" class="alinha_icon" style="font-size: 24px"></ion-icon> 
+            <div style="padding-top: 6px">SAIR</div>
+        </button>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+        <div class="versaoApp">
+            Versão: 1.0.0
+          </div>
+    </ion-footer>
+  
+  </ion-menu>
+  
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

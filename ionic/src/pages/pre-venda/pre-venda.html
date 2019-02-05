@@ -1,0 +1,49 @@
+
+<ion-header>
+    <header-custom></header-custom>
+</ion-header>
+
+
+<ion-content no-padding text-center>
+  <ion-row padding>
+    <ion-col text-center (click)="togglePendente()"><h4 [ngClass]="{'border-green': isPendente}">Pendentes</h4></ion-col>
+    <ion-col text-center (click)="togglePendente()"><h4 [ngClass]="{'border-green': !(isPendente)}">Fechadas</h4></ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col >
+        <h4> Minhas pré vendas </h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-list style="width: 100%;">
+        <div  *ngFor="let item of data; let i = index">
+          <ion-item padding [ngClass]="{'mod-2':i%2 === 0}" style="padding: 0 16px;">
+            
+            <ion-avatar item-start>
+              <img src="../../assets/imgs/logo_login.png">
+            </ion-avatar>
+            <ion-row>
+              <ion-col>
+                <h2>Fazenda Slavieiro </h2>
+                <h3>05/02/2019</h3>
+                <p>Cascavel-Pr</p>
+              </ion-col>
+              <ion-col text-right>
+                <small>
+                  100 fêmeas <br>
+                  80 machos
+                </small>
+  
+              </ion-col>
+            </ion-row>
+  
+          </ion-item>
+  
+        </div>
+  
+  
+      </ion-list>
+  
+    </ion-row>
+  </ion-content>
+  

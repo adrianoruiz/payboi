@@ -1,0 +1,91 @@
+<ion-header>
+  <header-custom></header-custom>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-row>
+      <ion-col no-padding text-center>
+        <p no-margin>
+          <small>Friboi tem interesse de compra 05/02/1019</small>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-item no-lines no-margin no-padding text-wrap>
+      <ion-avatar item-left>
+      </ion-avatar>
+      <div margin-left class="chatbox chatbox-right">Boa Tarde</div>
+    </ion-item>
+
+    <ion-row>
+      <ion-col no-padding text-center>
+        <p no-margin>
+          <small>Fev 5, 2019, 2:13 PM</small>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-item no-lines no-margin no-padding text-wrap>
+      <ion-avatar item-left>
+        <img src="../../assets/imgs/fazenda2.jpg">
+      </ion-avatar>
+      <div class="chatbox">Boa tarde</div>
+    </ion-item>
+
+    <ion-row>
+        <ion-col no-padding text-center>
+          <p no-margin>
+            <small>Fev 5, 2019, 2:41 PM</small>
+          </p>
+        </ion-col>
+      </ion-row>
+  
+      <ion-item no-lines no-margin no-padding text-wrap>
+        <ion-avatar item-left>
+        </ion-avatar>
+        <div margin-left class="chatbox chatbox-right">Vamos fechar</div>
+      </ion-item>
+  
+      <ion-row>
+        <ion-col no-padding text-center>
+          <p no-margin>
+            <small>Fev 5, 2019, 2:55 PM</small>
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-item no-lines no-margin no-padding text-wrap>
+        <ion-avatar item-left>
+          <img src="../../assets/imgs/fazenda2.jpg">
+        </ion-avatar>
+        <div class="chatbox">Sim</div>
+      </ion-item>
+  </div>
+  <ion-item no-lines no-margin no-padding text-wrap *ngIf="send_like_icon" item-right>
+    <ion-avatar item-right>
+      <img src="https://randomuser.me/api/portraits/men/43.jpg">
+    </ion-avatar>
+    <div text-right [ngClass]="{'like-msg-btn': likeBtnVisible }">
+      <ion-icon name="heart" [ngClass]="{'like-btn': likeBtnVisible, 'heart-size': true }" color="danger"></ion-icon>
+    </div>
+  </ion-item>
+
+  <button  ion-button block style="border-radius:16px;background-color: #00C464; bottom: 5px;
+  width: 90%;position:absolute"> Fechar</button>
+</ion-content>
+<ion-footer text-center style="background-color: #00a04d;">
+  <ion-toolbar>
+    <ion-buttons start left>
+      <button ion-button icon-right>
+      </button>
+    </ion-buttons>
+    <div style="background: #fff; border-radius: 8px">
+      <ion-input type="text" value="" [(ngModel)]="input_message"></ion-input>
+    </div>
+
+    <ion-buttons end>
+      <button ion-button icon-right>
+        <ion-icon name="ios-paper-plane"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
